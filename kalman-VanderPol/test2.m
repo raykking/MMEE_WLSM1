@@ -52,10 +52,10 @@ for i = 1:length_1
     f = J(x1,x2);
     ff = FF(x1,x2)+W;
     F = vpa(f,3);
-    X = data(i,:)';%%%%%%真实弹道
-    %     X = a;%%%%%%真实弹道
+    X = data(i,:)';%%%%%%真实
+    %     X = a;%%%%%%真实
     h = data(i,:)';
-    Z = h + d+3;%%%%%%%%测量值
+    Z = h + d+3;%%%%%%%%测量
     delta_act(:,end+1)=Z;
     %%%%
     Fai = I1 + F * ts;
@@ -82,26 +82,26 @@ for i = 1:length_1
  end
 plot(t,xx2)
 %
-    data_ = [xx1,xx2];%%%%%%%%%估计弹道数据data_ 
+    data_ = [xx1,xx2];%%%%%%%%%估计数据data_ 
  
-   delta_act = delta_act';%%%%%%%%测量弹道数据delta_act
+   delta_act = delta_act';%%%%%%%%测量数据delta_act
         for k = 1:2
-            delta_act1(:,k) = data(:,k)- delta_act(:,k);%%%%%%%%%%%%%%%测量弹道误差delta_act1
-            data_1(:,k) = data(:,k)-data_(:,k);%%%%%%%%%估计弹道误差data_1
+            delta_act1(:,k) = data(:,k)- delta_act(:,k);%%%%%%%%%%%%%%%测量误差delta_act1
+            data_1(:,k) = data(:,k)-data_(:,k);%%%%%%%%%估计误差data_1
             delta_cegu(:,k)=delta_act(:,k)-data_(:,k);
         end
         
  
    
        
-fp = fopen('估计弹道.txt','w');
-save('估计弹道.txt','data_','-ascii','-append');
-fp = fopen('测量弹道.txt','w');
-save('测量弹道.txt','delta_act','-ascii','-append');
-fp = fopen('估计弹道error.txt','w');
-save('估计弹道error.txt','data_1','-ascii','-append');
-fp = fopen('测量弹道error.txt','w');
-save('测量弹道error.txt','delta_act1','-ascii','-append');
+fp = fopen('估计.txt','w');
+save('估计.txt','data_','-ascii','-append');
+fp = fopen('测量.txt','w');
+save('测量.txt','delta_act','-ascii','-append');
+fp = fopen('估计error.txt','w');
+save('估计error.txt','data_1','-ascii','-append');
+fp = fopen('测量error.txt','w');
+save('测量error.txt','delta_act1','-ascii','-append');
 fp = fopen('测量估计error.txt','w');
 save('测量估计error.txt','delta_cegu','-ascii','-append');
 %  error_picvan  

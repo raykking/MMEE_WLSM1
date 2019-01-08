@@ -5,10 +5,10 @@ T=0.01;
 for i=1:Tend   
     t(i+1)=(t(i)+T);
 end
-eva_error = dlmread('估计弹道error.txt');
-act_error = dlmread('测量弹道error.txt');
-eva = dlmread('估计弹道.txt');
-act = dlmread('测量弹道.txt');
+eva_error = dlmread('估计error.txt');
+act_error = dlmread('测量error.txt');
+eva = dlmread('估计.txt');
+act = dlmread('测量.txt');
 cegu=dlmread('测量估计error.txt');
 % length_2= size(eva_error,1);
 % plot(1:length_2,cegu(:,1),'r--')
@@ -29,7 +29,7 @@ cegu=dlmread('测量估计error.txt');
     
     actx = act(:,1);
     acty = act(:,2);
-%%%%%%%%%%%%%%%%%%%%%%%测量弹道与实际弹道对比三维图    
+%%%%%%%%%%%%%%%%%%%%%%%测量与实际对比三维图    
     plot(t,evax,'r-.');figure
     plot(t,actx,'b-.')
 %     figure
@@ -51,4 +51,4 @@ cegu=dlmread('测量估计error.txt');
     figure
      plot(t,y_error+3,'b--')
    % xlabel ('x');ylabel ('y')
-%%%%%%%%%%%%%%%%%%%%%%%各坐标方向上的误差对比图   
+%%%%%%%%%%%%%%%%%%%%%%%
